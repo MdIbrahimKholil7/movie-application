@@ -4,19 +4,23 @@ import { useParams } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../Style/MovieDetails.css'
 import MovieModal from './MovieModal';
+import Loading from '../Share/Loading';
 const MovieDetails = () => {
     const [modalShow, setModalShow] = useState(false);
     const [movie, setMovie] = useState({})
+    const [loading, setLoading] = useState(false)
     const { id } = useParams()
 
     useEffect(() => {
         (async () => {
+            setLoading(true)
             const { data } = await axios.get(`https://api.tvmaze.com/shows/${id}`)
             setMovie(data)
+            setLoading(false)
         })()
     }, [])
+    if(loading) return <Loading/>
     const { genres, language, name, rating, image, premiered, summary } = movie || {}
-    console.log(movie)
     return (
         <div className='mt-5 pt-5 mb-5 px-sm-4'>
             <Container>
