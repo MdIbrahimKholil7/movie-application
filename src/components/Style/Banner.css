@@ -25,4 +25,5 @@
 .r-btn{
     background: linear-gradient(to right, #bb511e, #f1bc00);
     font-size: 14px;
+    border: none !important;
 }

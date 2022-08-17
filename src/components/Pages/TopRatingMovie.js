@@ -7,20 +7,13 @@ import MovieCard from './MovieCard';
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useMovie from '../customHooks/useMovie';
 
 const TopRatingMovie = () => {
 
-    const [movies, setMovies] = useState([])
+    const [movies]=useMovie()
     const [movieIndex, setMovieIndex] = useState(0)
-
-    // fetching data 
-    useEffect(() => {
-        (async () => {
-            const { data } = await axios.get(`https://api.tvmaze.com/search/shows?q=all`)
-            setMovies(data)
-        })()
-    }, [])
-
+    
     const settings = {
         infinite: true,
         lazyLoad: true,
