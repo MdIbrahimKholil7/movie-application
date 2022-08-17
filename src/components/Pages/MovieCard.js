@@ -6,7 +6,7 @@ const MovieCard = ({movie,index,movieIndex}) => {
     const {image:{original},name,language,rating,schedule:{time}}=movie.show || {}
     return (
         <div className='d-flex justify-content-center align-items-center'>
-            <div className={` card-container  ${ index === movieIndex ? 'active-card hover-card':'inactive-card'}`}>
+            <div className={` card-container  ${ index === movieIndex ? 'active-card hover-card':'inactive-card disable-btn'}`}>
                 <div className='movie-card'>
                     <img className='img' src={original} alt={name} />
                     <div className='movie-name'>
@@ -15,7 +15,7 @@ const MovieCard = ({movie,index,movieIndex}) => {
                     </div>
                 </div>
                 <div className='details-btn-container'>
-                    <button className='details-btn'>Details</button>
+                    <button className={`${index === movieIndex ? 'cursor-point':'disable-btn'} details-btn `}>Details</button>
                     <p className=''>Rating {rating.average}</p>
                 </div>
                 <p className='time'>{time ? time:'19:12'}</p>
