@@ -1,2 +1,2 @@
 # Movie Application
-## Website link (https://parts-mania.web.app)
+## Website link https://moviak-121.netlify.app/
