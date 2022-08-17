@@ -26,8 +26,11 @@ const TopRatingMovie = () => {
         lazyLoad: true,
         slidesToShow: 3,
         centerMode: true,
-        speed: 1000,
         centerPadding: 0,
+        arrows: false,
+        autoplay: true,
+        speed: 2000,
+        autoplaySpeed: 2000,
         beforeChange: (current, next) => setMovieIndex(next),
         responsive: [
 
@@ -68,10 +71,10 @@ const TopRatingMovie = () => {
                     <div className='pt-5 pb-5'>
                         <Slider {...settings}>
                             {
-                                movies.map((movie,index)=><MovieCard
-                                movie={movie}
-                                index={index}
-                                movieIndex={movieIndex}
+                                movies.map((movie, index) => <MovieCard
+                                    movie={movie}
+                                    index={index}
+                                    movieIndex={movieIndex}
 
                                 />)
                             }
