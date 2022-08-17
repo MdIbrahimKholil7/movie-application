@@ -18,7 +18,7 @@ const MovieDetails = () => {
     const { genres, language, name, rating, image, premiered, summary } = movie || {}
     console.log(movie)
     return (
-        <div className='mt-5 pt-5 mb-5 sm-px-4'>
+        <div className='mt-5 pt-5 mb-5 px-sm-4'>
             <Container>
                 <Row>
                     <Col className='px-0' md={4} >
@@ -41,7 +41,7 @@ const MovieDetails = () => {
                             <div className='divider'></div>
                         </div>
                         <div className='mt-5 ps-4'>
-                            <h1 className='summery fs-3'>Summary</h1>
+                            <h1 className='summery fs-4 fs-md-3'>Summary</h1>
                             <p className='summary'>{
                                 summary?.split('</p>').join('')?.slice(3, summary?.length).split('<b>').join('').split('</b>').join('')
                             }</p>
@@ -56,6 +56,7 @@ const MovieDetails = () => {
             show={modalShow}
             onHide={()=>setModalShow(false)}
             movie={movie}
+            setModalShow={setModalShow}
             />
         </div>
     );

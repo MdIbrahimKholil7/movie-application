@@ -26,7 +26,9 @@ const MovieModal = (props) => {
                         summary?.split('</p>').join('')?.slice(3, summary?.length).split('<b>').join('').split('</b>').join('')
                     }</p>
                     <div className='mt-5'>
-                        <UserDetails/>
+                        <UserDetails
+                        setModalShow={props.setModalShow}
+                        />
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
