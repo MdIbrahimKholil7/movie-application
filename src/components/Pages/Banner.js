@@ -1,8 +1,8 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { Container } from 'react-bootstrap';
 import '../Style/Banner.css'
 import {motion} from 'framer-motion'
-const Banner = React.memo(() => {
+const Banner = () => {
 
     const showVariants={
         show:{
@@ -63,6 +63,6 @@ const Banner = React.memo(() => {
             </div>
         </div>
     );
-});
+};
 
-export default memo(Banner);
+export default Banner;
